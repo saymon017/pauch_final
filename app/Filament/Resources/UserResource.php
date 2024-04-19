@@ -38,7 +38,7 @@ class UserResource extends Resource
                 ->unique(ignoreRecord: true)
                 ->required(),
 
-                Forms\Components\TextInput::make('email_verified_at')
+                Forms\Components\DateTimePicker::make('email_verified_at')
                 ->label('Email Verified At')
                 ->default(now()),
 
@@ -55,16 +55,28 @@ class UserResource extends Resource
             ->columns([
                 tables\Columns\TextColumn::make('name')
                     ->searchable(),
+
                 tables\Columns\TextColumn::make('email')
                     ->searchable(),
+
                 tables\Columns\TextColumn::make('email_verified_at')
-                    ->dataTime(),
+                    ->dateTime()
+                    ->sortable(), 
+
+                tables\Columns\TextColumn::make('create_at')
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
