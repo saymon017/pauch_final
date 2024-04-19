@@ -56,9 +56,9 @@ class UserResource extends Resource
                 tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 tables\Columns\TextColumn::make('email')
-                    ->searchable()
+                    ->searchable(),
                 tables\Columns\TextColumn::make('email_verified_at')
-                    ->dataTime()
+                    ->dataTime(),
             ])
             ->filters([
                 //
