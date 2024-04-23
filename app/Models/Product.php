@@ -21,7 +21,12 @@ class Product extends Model
         'is_active',
         'is_featured',
         'is_stock',
-        'on_sale'];
+        'on_sale'
+    ];
+
+    protected $casts = [
+        'images' => 'array',
+    ];
 
     public function category(){
         return $this->belongsTo(Category::class);
