@@ -97,11 +97,11 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
-                // ActionGroup::make([
-                //     ViewAction::make(),
-                //     EditAction::make(),
-                //     DeleteAction::make(),
-                // ])
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
 
             ->bulkActions([
@@ -118,6 +118,16 @@ class CategoryResource extends Resource
         ];
     }
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return static::getModel()::count() > 10 ? 'success' : 'danger';
+    }
+
     public static function getPages(): array
     {
         return [
@@ -127,3 +137,4 @@ class CategoryResource extends Resource
         ];
     }
 }
+

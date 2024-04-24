@@ -10,3 +10,4 @@ class CreateBrand extends CreateRecord
 {
     protected static string $resource = BrandResource::class;
 }
+

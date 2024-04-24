@@ -41,26 +41,26 @@ class BrandResource extends Resource
                 Section::make([
                     Grid::make()
                         ->schema([
-                            TextInput::make('name')
-                            ->required()
-                            ->maxLength(255)
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state,  Set $set) => $operation
-                            === 'create' ? $set('slug', Str::slug($state)) : null),
+                            TextInput::make('Nombre')
+                                ->required()
+                                ->maxLength(255)
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn (string $operation, $state,  Set $set) => $operation
+                                === 'create' ? $set('slug', Str::slug($state)) : null),
 
                             TextInput::make('slug')
-                            ->maxLength(255)
-                            ->disabled()
-                            ->required()
-                            ->dehydrated()
-                            ->unique(Brand::class. 'slug', ignoreRecord: true)
+                                ->maxLength(255)
+                                ->disabled()
+                                ->required()
+                                ->dehydrated()
+                                ->unique(Brand::class. 'slug', ignoreRecord: true)
                         ]),
 
-                    FileUpload::make('image')
+                    FileUpload::make('imagen')
                     ->image()
                     ->directory('brands'),
 
-                    Toggle::make('is_active')
+                    Toggle::make('está activo')
                     ->required()
                     ->default(true)
                 ])
@@ -123,3 +123,4 @@ class BrandResource extends Resource
         ];
     }
 }
+
