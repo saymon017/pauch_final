@@ -34,6 +34,10 @@ class BrandResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
 
+    protected static ?string $recordTitleAttribute = 'name';
+
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -41,7 +45,7 @@ class BrandResource extends Resource
                 Section::make([
                     Grid::make()
                         ->schema([
-                            TextInput::make('Nombre')
+                            TextInput::make('name')
                                 ->required()
                                 ->maxLength(255)
                                 ->live(onBlur: true)
@@ -56,7 +60,7 @@ class BrandResource extends Resource
                                 ->unique(Brand::class. 'slug', ignoreRecord: true)
                         ]),
 
-                    FileUpload::make('imagen')
+                    FileUpload::make('image')
                     ->image()
                     ->directory('brands'),
 
