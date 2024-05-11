@@ -21,7 +21,7 @@
                         <td class="py-4">
                         <div class="flex items-center">
                             <img class="h-16 w-16 mr-4" src="{{ url('storage', $item['image']) }}" alt="{{ $item['name'] }}">
-                            <span class="font-semibold">nombre Producto</span>
+                            <span class="font-semibold">{{ $item['name']}}</span>
                         </div>
                         </td>
                         <td class="py-4">{{ Number::currency($item['unit_amount'], 'INR') }}</td>
@@ -42,7 +42,8 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="text-center py-4 text-4xl font-semiboild text-slate-500">¡No hay artículos disponibles en el carrito!</td>
+                        <td colspan="5" class="text-center py-4 text-4xl font-semiboild text-slate-500">¡No hay artículos
+                             disponibles en el carrito!</td>
                     </tr>
                 @endforelse
 
@@ -72,7 +73,7 @@
               <span class="font-semibold">{{ Number::currency($grand_total, 'INR') }}</span>
             </div>
             @if ($cart_items)
-                <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Pagar Compra</button>
+                <a href="/checkout" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Pagar Compra</a>
             @endif
           </div>
         </div>

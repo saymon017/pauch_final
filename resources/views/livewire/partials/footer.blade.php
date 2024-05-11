@@ -8,7 +8,7 @@
         <!-- End Col -->
 
         <div class="col-span-1">
-          <h4 class="font-semibold text-gray-100">Product</h4>
+          <h4 class="font-semibold text-gray-100">Productos</h4>
 
           <div class="mt-3 grid space-y-3">
             <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/categories">Categories</a></p>
@@ -19,7 +19,7 @@
         <!-- End Col -->
 
         <div class="col-span-1">
-          <h4 class="font-semibold text-gray-100">Company</h4>
+          <h4 class="font-semibold text-gray-100">Compañia</h4>
 
           <div class="mt-3 grid space-y-3">
             <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">About us</a></p>
