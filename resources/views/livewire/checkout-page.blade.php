@@ -17,8 +17,8 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="first_name">
                                     First Name
                                 </label>
-                                <input wire:model='first_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
-                                dark:text-white dark:border-none @error('first_name') border-red-500 @enderror" 
+                                <input wire:model='first_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                dark:text-white dark:border-none @error('first_name') border-red-500 @enderror"
                                 id="first_name" type="text">
                                 </input>
                                 @error('first_name')
@@ -29,8 +29,8 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="last_name">
                                     Last Name
                                 </label>
-                                <input wire:model='last_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
-                                dark:text-white dark:border-none @error('last_name') border-red-500 @enderror" 
+                                <input wire:model='last_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                dark:text-white dark:border-none @error('last_name') border-red-500 @enderror"
                                 id="last_name" type="text">
                                 </input>
                                 @error('last_name')
@@ -42,7 +42,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="phone">
                                 Phone
                             </label>
-                            <input wire:model='phone' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
+                            <input wire:model='phone' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('phone') border-red-500 @enderror" id="phone" type="text">
                             </input>
                             @error('phone')
@@ -53,7 +53,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="address">
                                 Address
                             </label>
-                            <input wire:model='street_address' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
+                            <input wire:model='street_address' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('street_address') border-red-500 @enderror"
                             id="address" type="text">
                             </input>
@@ -65,7 +65,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="city">
                                 City
                             </label>
-                            <input wire:model='city' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
+                            <input wire:model='city' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('city') border-red-500 @enderror" id="city" type="text">
                             </input>
                             @error('city')
@@ -77,7 +77,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="state">
                                     State
                                 </label>
-                                <input wire:model='state' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
+                                <input wire:model='state' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('state') border-red-500 @enderror" id="state" type="text">
                                 </input>
                                 @error('state')
@@ -88,7 +88,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="zip">
                                     ZIP Code
                                 </label>
-                                <input wire:model='zip_code' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700 
+                                <input wire:model='zip_code' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('zip_code') border-red-500 @enderror" id="zip" type="text">
                                 </input>
                                 @error('zip_code')
@@ -188,7 +188,8 @@
                     </hr>
                 </div>
                 <button type="submit" class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
-                    Place Order
+                    <span wire:loading.remove>Place Order</span>
+                    <span wire:loanding>Processing </span>
                 </button>
                 <div class="bg-white mt-4 rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
                     <div class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">
