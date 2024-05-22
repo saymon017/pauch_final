@@ -2,7 +2,7 @@
 	<h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
 		Checkout
 	</h1>
-	<form wire:submit.prevent='placeOrder'>
+	<form wire:submit='placeOrder'>
         <div class="grid grid-cols-12 gap-4">
             <div class="md:col-span-12 lg:col-span-8 col-span-12">
                 <!-- Card -->
@@ -17,7 +17,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="first_name">
                                     First Name
                                 </label>
-                                <input wire:model='first_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                <input wire:model.live='first_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('first_name') border-red-500 @enderror"
                                 id="first_name" type="text">
                                 </input>
@@ -29,7 +29,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="last_name">
                                     Last Name
                                 </label>
-                                <input wire:model='last_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                <input wire:model.live='last_name' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('last_name') border-red-500 @enderror"
                                 id="last_name" type="text">
                                 </input>
@@ -42,7 +42,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="phone">
                                 Phone
                             </label>
-                            <input wire:model='phone' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                            <input wire:model.live='phone' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('phone') border-red-500 @enderror" id="phone" type="text">
                             </input>
                             @error('phone')
@@ -53,7 +53,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="address">
                                 Address
                             </label>
-                            <input wire:model='street_address' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                            <input wire:model.live='street_address' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('street_address') border-red-500 @enderror"
                             id="address" type="text">
                             </input>
@@ -65,7 +65,7 @@
                             <label class="block text-gray-700 dark:text-white mb-1" for="city">
                                 City
                             </label>
-                            <input wire:model='city' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                            <input wire:model.live='city' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                             dark:text-white dark:border-none @error('city') border-red-500 @enderror" id="city" type="text">
                             </input>
                             @error('city')
@@ -77,7 +77,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="state">
                                     State
                                 </label>
-                                <input wire:model='state' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                <input wire:model.live='state' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('state') border-red-500 @enderror" id="state" type="text">
                                 </input>
                                 @error('state')
@@ -88,7 +88,7 @@
                                 <label class="block text-gray-700 dark:text-white mb-1" for="zip">
                                     ZIP Code
                                 </label>
-                                <input wire:model='zip_code' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
+                                <input wire:model.live='zip_code' class="w-full rounded-lg border py-2 px-3 dark:bg-gray-700
                                 dark:text-white dark:border-none @error('zip_code') border-red-500 @enderror" id="zip" type="text">
                                 </input>
                                 @error('zip_code')
@@ -102,7 +102,7 @@
                     </div>
                     <ul class="grid w-full gap-6 md:grid-cols-2">
                         <li>
-                            <input wire:model='payment_method' class="hidden peer" id="hosting-small" name="hosting"
+                            <input wire:model.live='payment_method' class="hidden peer" id="hosting-small" name="hosting"
                             required="" type="radio" value="cod" />
                             <label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white
                             border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300
@@ -121,7 +121,7 @@
                             </label>
                         </li>
                         <li>
-                            <input wire:model='payment_method' class="hidden peer" id="hosting-big" name="hosting"
+                            <input wire:model.live='payment_method' class="hidden peer" id="hosting-big" name="hosting"
                             type="radio" value="stripe">
                             <label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white
                             border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300

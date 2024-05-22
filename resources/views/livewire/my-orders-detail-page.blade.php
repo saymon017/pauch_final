@@ -77,7 +77,7 @@
               @php
                 $status = '';
                 if ($order->status == 'new') {
-                  # code...
+        
                 }
               @endphp
               <span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">
@@ -157,7 +157,7 @@
           <h1 class="font-3xl font-bold text-slate-500 mb-3">Shipping Address</h1>
           <div class="flex justify-between items-center">
             <div>
-              <p>{{ $address->street_address }}, {{ $address->city }}, {{ $address->state }}, {{ 
+              <p>{{ $address->street_address }}, {{ $address->city }}, {{ $address->state }}, {{
                 $address->zip_code }}</p>
             </div>
             <div>

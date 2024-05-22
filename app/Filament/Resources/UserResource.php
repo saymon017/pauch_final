@@ -19,8 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use function Laravel\Prompts\table;
 
-class UserResource extends Resource
-{
+class UserResource extends Resource {
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
@@ -29,8 +28,7 @@ class UserResource extends Resource
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
-    {
+    public static function form(Form $form): Form {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
@@ -54,21 +52,20 @@ class UserResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
-    {
+    public static function table(Table $table): Table {
         return $table
             ->columns([
-                tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
 
-                tables\Columns\TextColumn::make('email')
+                Tables\Columns\TextColumn::make('email')
                     ->searchable(),
 
-                tables\Columns\TextColumn::make('email_verified_at')
+                Tables\Columns\TextColumn::make('email_verified_at')
                     ->dateTime()
-                    ->sortable(), 
+                    ->sortable(),
 
-                tables\Columns\TextColumn::make('create_at')
+                Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),
             ])
