@@ -5,8 +5,8 @@ namespace App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource;
 use App\Filament\Resources\OrderResource\Widgets\OrderStats;
 use Filament\Actions;
-use Filament\Forms\Components\Tabs\Tab;
 use Filament\Resources\Pages\ListRecords;
+use Filament\Tables\Filters\Filter;
 
 class ListOrders extends ListRecords
 {
@@ -26,15 +26,28 @@ class ListOrders extends ListRecords
         ];
     }
 
-    public function getTabs(): array
-{
-    return [
-        null => Tab::make('ALL'),
-        'new' => Tab::make('New Orders', fn ($query) => $query->where('status', 'new')),
-        'processing' => Tab::make('Processing Orders', fn ($query) => $query->where('status', 'processing')),
-        'shipped' => Tab::make('Shipped Orders', fn ($query) => $query->where('status', 'shipped')),
-        'delivered' => Tab::make('Delivered Orders', fn ($query) => $query->where('status', 'delivered')),
-        'cancelled' => Tab::make('Cancelled Orders', fn ($query) => $query->where('status', 'cancelled')),
-    ];
-}
+    protected function getTableFilters(): array
+    {
+        return [
+            Filter::make('new')
+                ->query(fn ($query) => $query->where('status', 'new'))
+                ->label('New Orders'),
+
+            Filter::make('processing')
+                ->query(fn ($query) => $query->where('status', 'processing'))
+                ->label('Processing Orders'),
+
+            Filter::make('shipped')
+                ->query(fn ($query) => $query->where('status', 'shipped'))
+                ->label('Shipped Orders'),
+
+            Filter::make('delivered')
+                ->query(fn ($query) => $query->where('status', 'delivered'))
+                ->label('Delivered Orders'),
+
+            Filter::make('cancelled')
+                ->query(fn ($query) => $query->where('status', 'cancelled'))
+                ->label('Cancelled Orders'),
+        ];
+    }
 }

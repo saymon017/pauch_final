@@ -42,12 +42,12 @@ class BrandResource extends Resource {
                                 ->afterStateUpdated(fn (string $operation, $state,  Set $set) => $operation
                                 === 'create' ? $set('slug', Str::slug($state)) : null),
 
-                            TextInput::make('slug')
-                                ->maxLength(255)
-                                ->disabled()
-                                ->required()
-                                ->dehydrated()
-                                ->unique(Brand::class. 'slug', ignoreRecord: true)
+                            // TextInput::make('slug')
+                            //     ->maxLength(255)
+                            //     ->disabled()
+                            //     ->required()
+                            //     ->dehydrated()
+                            //     ->unique(Brand::class. 'slug', ignoreRecord: true)
                         ]),
 
                     FileUpload::make('image')
@@ -69,8 +69,8 @@ class BrandResource extends Resource {
 
                 Tables\Columns\ImageColumn::make('image'),
 
-                Tables\Columns\IconColumn::make('slug')
-                    ->searchable(),
+                // Tables\Columns\IconColumn::make('slug')
+                //     ->searchable(),
 
 
                 Tables\Columns\TextColumn::make('created_at')

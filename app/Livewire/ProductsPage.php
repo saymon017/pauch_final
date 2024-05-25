@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Helpers\CartManagement;
-use App\Livewire\Partials\Navbar;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -16,10 +15,8 @@ use Livewire\WithPagination;
 #[Title('Products - Pauchi')]
 class ProductsPage extends Component
 {
-
     use LivewireAlert;
     use WithPagination;
-
 
     #[Url]
     public $selected_categories = [];
@@ -30,49 +27,52 @@ class ProductsPage extends Component
     #[Url]
     public $featured;
 
-     #[Url]
-     public $on_sale;
+    #[Url]
+    public $on_sale;
 
-     #[Url]
-     public $price_range = 300000;
+    #[Url]
+    public $price_range = 300000;
 
-     #[Url]
-     public $sort = 'latest';
+    #[Url]
+    public $sort = 'latest';
 
-     //Add product to cart method
-     public function addToCart($product_id){
+    // Add product to cart method
+    public function addToCart($product_id)
+    {
         $total_count = CartManagement::addItemToCart($product_id);
 
-        $this->Route::dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class);
+        // Emitir un evento para actualizar el conteo del carrito en el componente Navbar
+        $this->emit('update-cart-count', $total_count);
 
+        // Mostrar una alerta de éxito
         $this->alert('success', 'Product added to cart successfully!', [
             'position' => 'bottom-end',
             'timer' => 3000,
             'toast' => true,
-           ]);
-     }
+        ]);
+    }
 
-
-    public function render(){
+    public function render()
+    {
         $productQuery = Product::query()->where('is_active', 1);
 
-        if(!empty($this->selected_categories)){
+        if (!empty($this->selected_categories)) {
             $productQuery->whereIn('category_id', $this->selected_categories);
         }
 
-        if(!empty($this->selected_brands)){
+        if (!empty($this->selected_brands)) {
             $productQuery->whereIn('brand_id', $this->selected_brands);
         }
 
-        if($this->featured){
+        if ($this->featured) {
             $productQuery->where('is_featured', 1);
         }
 
-        if($this->on_sale){
+        if ($this->on_sale) {
             $productQuery->where('on_sale', 1);
         }
 
-        if($this->price_range){
+        if ($this->price_range) {
             $productQuery->whereBetween('price', [0, $this->price_range]);
         }
 
@@ -86,7 +86,7 @@ class ProductsPage extends Component
 
         return view('livewire.products-page', [
             'products' => $productQuery->paginate(9),
-            'brands' => Brand::where('is_active', 1)->get(['id', 'name', 'slug']),
+            'brands' => Brand::where('is_active', 1)->get(['id', 'name']),
             'categories' => Category::where('is_active', 1)->get(['id', 'name', 'slug']),
         ]);
     }
