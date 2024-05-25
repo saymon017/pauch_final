@@ -75,16 +75,14 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap items-center">
+
                         @foreach ($products as $product)
                             <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/3" wire:key="{{ $product->id }}">
                                 <div class="border border-gray-300 dark:border-gray-700">
                                     <div class="relative bg-gray-200">
                                         <a href="/products/{{ $product->slug }}" class="">
-                                            @if (isset($product->imagen))
-                                                <img src="{{ asset('storage/products/' . $product->imagen[0]) }}" alt="{{ $product->name }}" class="object-cover w-full h-56 mx-auto">
-                                            @else
-                                                <img src="{{ asset('placeholder.jpg') }}" alt="Producto sin imagen" class="object-cover w-full h-56 mx-auto">
-                                            @endif
+                                            <img src="{{ url('storage', $product->images[0]) }}" alt="{{ $product->name }}"
+                                            class="object-cover w-full h-56 mx-auto ">
                                         </a>
                                     </div>
                                     <div class="p-3">
