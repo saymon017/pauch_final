@@ -40,7 +40,7 @@ class ProductResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
-    public static function form(Form $form): Form 
+    public static function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -56,7 +56,7 @@ class ProductResource extends Resource
                                 }
                                 $set('slug', Str::slug($state));
                             }),
-                        
+
                         TextInput::make('slug')
                             ->required()
                             ->maxLength(255)
@@ -94,7 +94,7 @@ class ProductResource extends Resource
                             ->relationship('category', 'name'),
 
                         Select::make('brand_id')
-                            
+
                             ->searchable()
                             ->preload()
                             ->relationship('brand', 'name'),
@@ -116,10 +116,10 @@ class ProductResource extends Resource
                             ->required(),
                     ])
                 ])->columnSpan(1)
-            
+
             ])->columns(3);
     }
-    
+
 
     public static function table(Table $table): Table
     {
@@ -134,7 +134,7 @@ class ProductResource extends Resource
                 TextColumn::make('brand.name')
                     ->sortable(),
 
-                TextColumn::make('price ')
+            TextColumn::make('price ')
                     ->money('INR')
                     ->sortable(),
 
@@ -168,11 +168,11 @@ class ProductResource extends Resource
                     ->relationship('brand', 'name'),
             ])
             ->actions([
-            //    ActionGroup::make([
-            //         ViewAction::make(),
-            //         EditAction::make(),
-            //         ActionsDeleteAction::make(),
-            //    ])
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

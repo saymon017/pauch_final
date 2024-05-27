@@ -12,7 +12,7 @@ use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-#[Title('Products - Pauchi')]
+#[Title('Productos - Pauchi')]
 class ProductsPage extends Component
 {
     use LivewireAlert;
@@ -42,10 +42,10 @@ class ProductsPage extends Component
         $total_count = CartManagement::addItemToCart($product_id);
 
         // Emitir un evento para actualizar el conteo del carrito en el componente Navbar
-        $this->emit('update-cart-count', $total_count);
+        // $this->emit('update-cart-count', $total_count);
 
         // Mostrar una alerta de éxito
-        $this->alert('success', 'Product added to cart successfully!', [
+        $this->alert('success', 'Producto agregado al carrito con éxito!', [
             'position' => 'bottom-end',
             'timer' => 3000,
             'toast' => true,

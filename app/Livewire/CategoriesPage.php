@@ -6,7 +6,7 @@ use App\Models\Category;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Categories - Pauchi')]
+#[Title('Categorias - Pauchi')]
 class CategoriesPage extends Component{
     public function render(){
         $categories = Category::where('is_active', 1)->get();

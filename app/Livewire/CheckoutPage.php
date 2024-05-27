@@ -69,7 +69,7 @@ class CheckoutPage extends Component{
         $order->payment_status = 'pending';
         $order->status = 'new';
         $order->currency = 'inr';
-        $order->shipping_amouunt = 0;
+        $order->shipping_amount = 0;
         $order->shipping_method = 'nome';
         $order->notes = 'Order placed by ' . auth()->user()->name;
 
@@ -105,7 +105,7 @@ class CheckoutPage extends Component{
         $address->save();
         $order->items()->createMany($cart_items);
         CartManagement::clearCartItems();
-        Mail::to(request()->user())->send(new OrderPlaced($order));
+        //Mail::to(request()->user())->send(new OrderPlaced($order));
         return redirect($redirect_url);
         }
 

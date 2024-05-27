@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->string('shipping_amount', 10, 2)->nullable();
             $table->string('shipping_method')->nullable();
+            $table->text('notes')->nullable(); // Agregar esta línea
             $table->timestamps();
         });
     }

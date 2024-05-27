@@ -105,8 +105,8 @@ class OrderResource extends Resource
                                 'usps' => 'USPS',
                             ]),
 
-                        Textarea::make('notes')
-                            ->columnSpanFull()
+                        // Textarea::make('notes')
+                        //     ->columnSpanFull()
                     ])->columns(2),
 
                     Section::make('Order Items')->schema([
