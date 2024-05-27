@@ -24,7 +24,7 @@
                             <span class="font-semibold">{{ $item['name']}}</span>
                         </div>
                         </td>
-                        <td class="py-4">{{ Number::currency($item['unit_amount'], 'INR') }}</td>
+                        <td class="py-4">{{ Number::currency($item['unit_amount'], 'COP') }}</td>
                         <td class="py-4">
                         <div class="flex items-center">
                             <button wire:click='decreaseQty({{ $item['product_id'] }})' class="border rounded-md py-2 px-4 mr-2">-</button>
@@ -33,7 +33,7 @@
                         </div>
                         </td>
                         <td class="py-4">
-                            {{ Number::currency($item['total_amount'], 'INR') }}
+                            {{ Number::currency($item['total_amount'], 'COP') }}
                         </td>
                         <td>
                             <button wire:click='removeItem({{ $item['product_id'] }})' class="bg-slate-300 border-2 border-slate-400 rounded-lg
@@ -57,20 +57,20 @@
             <h2 class="text-lg font-semibold mb-4">Total Compra</h2>
             <div class="flex justify-between mb-2">
               <span>Subtotal</span>
-              <span>{{ Number::currency($grand_total, 'INR') }}</span>
+              <span>{{ Number::currency($grand_total, 'COP') }}</span>
             </div>
             <div class="flex justify-between mb-2">
               <span>Iva</span>
-              <span>{{ Number::currency(0, 'INR') }}</span>
+              <span>{{ Number::currency(0, 'COP') }}</span>
             </div>
             <div class="flex justify-between mb-2">
               <span>Descuento</span>
-              <span>{{ Number::currency(0, 'INR') }}</span>
+              <span>{{ Number::currency(0, 'COP') }}</span>
             </div>
             <hr class="my-2">
             <div class="flex justify-between mb-2">
               <span class="font-semibold">Total</span>
-              <span class="font-semibold">{{ Number::currency($grand_total, 'INR') }}</span>
+              <span class="font-semibold">{{ Number::currency($grand_total, 'COP') }}</span>
             </div>
             @if ($cart_items)
                 <a href="/checkout" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Pagar Compra</a>

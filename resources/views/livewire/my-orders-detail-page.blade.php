@@ -77,7 +77,7 @@
               @php
                 $status = '';
                 if ($order->status == 'new') {
-        
+
                 }
               @endphp
               <span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">
@@ -141,12 +141,12 @@
                       <span class="font-semibold">Samsung Galaxy Watch6</span>
                     </div>
                   </td>
-                  <td class="py-4">{{ Number::currency($item->unit_amount, 'INR') }}
+                  <td class="py-4">{{ Number::currency($item->unit_amount, 'COP') }}
                   </td>
                   <td class="py-4">
                     <span class="text-center w-8">{{ $item->quantity }}</span>
                   </td>
-                  <td class="py-4">{{ Number::currency($item->total_amount, 'INR') }}</td>
+                  <td class="py-4">{{ Number::currency($item->total_amount, 'COP') }}</td>
                 </tr>
               @endforeach
             </tbody>
@@ -173,7 +173,7 @@
           <h2 class="text-lg font-semibold mb-4">Summary</h2>
           <div class="flex justify-between mb-2">
             <span>Subtotal</span>
-            <span>{{ Number::currency($item->order->grand_total, 'INR') }}</span>
+            <span>{{ Number::currency($item->order->grand_total, 'COP') }}</span>
           </div>
           <div class="flex justify-between mb-2">
             <span>Taxes</span>
@@ -186,7 +186,7 @@
           <hr class="my-2">
           <div class="flex justify-between mb-2">
             <span class="font-semibold">Grand Total</span>
-            <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'INR') }}</span>
+            <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'COP') }}</span>
           </div>
 
         </div>

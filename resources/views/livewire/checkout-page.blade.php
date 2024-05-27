@@ -157,7 +157,7 @@
                             Subtotal
                         </span>
                         <span>
-                            {{ Number::currency($grand_total, 'INR')}}
+                            {{ Number::currency($grand_total, 'COP')}}
                         </span>
                     </div>
                     <div class="flex justify-between mb-2 font-bold">
@@ -165,7 +165,7 @@
                             Iva
                         </span>
                         <span>
-                            {{ Number::currency(0, 'INR')}}
+                            {{ Number::currency(0, 'COP')}}
                         </span>
                     </div>
                     <div class="flex justify-between mb-2 font-bold">
@@ -173,7 +173,7 @@
                             Envio
                         </span>
                         <span>
-                            {{ Number::currency(0, 'INR')}}
+                            {{ Number::currency(0, 'COP')}}
                         </span>
                     </div>
                     <hr class="bg-slate-400 my-4 h-1 rounded">
@@ -182,7 +182,7 @@
                             Total Compra
                         </span>
                         <span>
-                            {{ Number::currency($grand_total, 'INR')}}
+                            {{ Number::currency($grand_total, 'COP')}}
                         </span>
                     </div>
                     </hr>
@@ -214,7 +214,7 @@
                                         </p>
                                     </div>
                                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                        {{ Number::currency($ci['total_amount'], 'INR') }}
+                                        {{ Number::currency($ci['total_amount'], 'COP') }}
                                     </div>
                                 </div>
                             </li>

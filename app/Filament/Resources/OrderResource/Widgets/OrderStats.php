@@ -14,7 +14,7 @@ class OrderStats extends BaseWidget
         $averagePrice = Order::query()->avg('grand_total') ?? 0; // Manejar null con un valor predeterminado de 0
 
         // Asegurarse de que estamos utilizando el formateador de moneda correcto
-        $formattedAveragePrice = $this->formatCurrency($averagePrice, 'INR');
+        $formattedAveragePrice = $this->formatCurrency($averagePrice, 'COP');
 
         return [
             Stat::make('New Orders', Order::query()->where('status', 'new')->count()),

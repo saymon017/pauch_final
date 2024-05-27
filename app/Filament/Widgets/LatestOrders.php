@@ -31,7 +31,7 @@ class LatestOrders extends BaseWidget
                     ->searchable(),
 
                 TextColumn::make('grand_total')
-                    ->money('INR'),
+                    ->money('COP'),
 
                 TextColumn::make('status')
                     ->badge()

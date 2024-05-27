@@ -83,7 +83,7 @@ class ProductResource extends Resource
                         TextInput::make('price')
                             ->numeric()
                             ->required()
-                            ->prefix('INR')
+                            ->prefix('COP')
                     ]),
 
                     Section::make('Associations')->schema([
@@ -135,7 +135,7 @@ class ProductResource extends Resource
                     ->sortable(),
 
             TextColumn::make('price ')
-                    ->money('INR')
+                    ->money('COP')
                     ->sortable(),
 
                 IconColumn::make('is_featured')

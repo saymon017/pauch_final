@@ -143,13 +143,12 @@
 
 {{-- Hero Section End --}}
 
-  {{--  Brand Section Start --}}
+  {{--  Aqui cominza la seccion de marcar --}}
   <section class="py-20">
     <div class="max-w-xl mx-auto">
       <div class="text-center ">
         <div class="relative flex flex-col items-center">
-          <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500"> Brands
-            </span> </h1>
+            <h1 class="text-5xl font-bold text-gray-900 dark:text-gray-200"> Explora las<span class="text-blue-500"> Marcas </span> </h1>
           <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
             <div class="flex-1 h-2 bg-blue-200">
             </div>
@@ -159,10 +158,8 @@
             </div>
           </div>
         </div>
-        <p class="mb-12 text-base text-center text-gray-500">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-          Pariatur
-          numquam, odio quod nobis ipsum ex cupiditate?
+        <p class="mb-12 text-base text-center text-gray-700 dark:text-gray-500">
+            Descubre una variedad de marcas populares en Pauchi y de productos de repostería. ¡Encuentra tus favoritos!
         </p>
       </div>
     </div>
@@ -187,13 +184,12 @@
   </section>
   {{--  Brand Section End --}}
 
-  {{-- Category Section Stard --}}
+  {{-- Aqui cominza la seccion de categorias --}}
   <div class="bg-orange-200 py-20">
     <div class="max-w-xl mx-auto">
       <div class="text-center ">
         <div class="relative flex flex-col items-center">
-          <h1 class="text-5xl font-bold dark:text-gray-200"> Browse <span class="text-blue-500"> Categories
-            </span> </h1>
+          <h1 class="text-5xl font-bold dark:text-gray-200">Explora las <span class="text-blue-500"> Categorías </span> </h1>
           <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
             <div class="flex-1 h-2 bg-blue-200">
             </div>
@@ -203,10 +199,8 @@
             </div>
           </div>
         </div>
-        <p class="mb-12 text-base text-center text-gray-500">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-          Pariatur
-          numquam, odio quod nobis ipsum ex cupiditate?
+        <p class="mb-12 text-base text-center text-gray-700 dark:text-gray-500">
+            Descubre una variedad de categorías y de nuestros mejores productos de repostería. ¡Todo Aquí!
         </p>
       </div>
     </div>

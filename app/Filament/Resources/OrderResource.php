@@ -89,12 +89,12 @@ class OrderResource extends Resource
 
                         Select::make('currency')
                             ->options([
-                                'inr' => 'INR',
+                                'cop' => 'COP',
                                 'usd' => 'USD',
                                 'eur' => 'EUR',
                                 'gbp' => 'GBP',
                             ])
-                            ->default('inr')
+                            ->default('cop')
                             ->required(),
 
                         Select::make('shipping_method')
@@ -159,14 +159,14 @@ class OrderResource extends Resource
                             ->content(function (Get $get) {
                                 $total = 0;
                                 if (!$repeaters = $get('items')) {
-                                    return Number::currency($total, 'INR');
+                                    return Number::currency($total, 'COP');
                                 }
 
                                 foreach ($repeaters as $repeater) {
                                     $total += $repeater['total_amount'] ?? 0;
                                 }
 
-                                return Number::currency($total, 'INR');
+                                return Number::currency($total, 'COP');
                             }),
 
                         Hidden::make('grand_total')
@@ -188,7 +188,7 @@ class OrderResource extends Resource
                 TextColumn::make('grand_total')
                     ->numeric()
                     ->sortable()
-                    ->money('INR'),
+                    ->money('COP'),
 
                 TextColumn::make('payment_method')
                     ->searchable()
