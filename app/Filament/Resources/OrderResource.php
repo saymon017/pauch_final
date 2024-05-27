@@ -38,9 +38,9 @@ class OrderResource extends Resource
         return $form
             ->schema([
                 Group::make()->schema([
-                    Section::make('Información del pedido')->schema([
+                    Section::make('order Information')->schema([
                         Select::make('user_id')
-                            ->label('Cliente')
+                            ->label('Customer')
                             ->relationship('user', 'name')
                             ->searchable()
                             ->preload()
@@ -66,11 +66,11 @@ class OrderResource extends Resource
                             ->default('new')
                             ->required()
                             ->options([
-                                'new' => 'New',
-                                'processing' => 'Processing',
-                                'shipped' => 'Shipped',
-                                'delivered' => 'Delivered',
-                                'cancelled' => 'Cancelled',
+                                'nuevo' => 'Nuevo',
+                                'procesando' => 'Procesando',
+                                'enviado' => 'Enviado',
+                                'entregado' => 'Entregado',
+                                'cancelado' => 'Cancelado',
                                 ])
                                 ->colors([
                                     'new' => 'info',
@@ -99,10 +99,10 @@ class OrderResource extends Resource
 
                         Select::make('shipping_method')
                             ->options([
-                                'fedex' => 'FedEx',
-                                'ups' => 'UPS',
-                                'dhl' => 'DHL',
-                                'usps' => 'USPS',
+                                'Dy' => 'Domi-YA',
+                                'S' => 'Servientreha',
+                                'En' => 'Envia',
+                                'Ve' => 'VecoEnvios',
                             ]),
 
                         // Textarea::make('notes')

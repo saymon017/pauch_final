@@ -6,9 +6,9 @@
             <div class="text-center">
               <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Sign up</h1>
               <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                Already have an account?
+                ¿Ya tienes una cuenta?
                 <a wire:navigate class="text-blue-600 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/login">
-                  Sign in here
+                    Firme aquí
                 </a>
               </p>
             </div>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div>
-                  <label for="email" class="block text-sm mb-2 dark:text-white">Email address</label>
+                  <label for="email" class="block text-sm mb-2 dark:text-white">Dirección de correo electrónico</label>
                   <div class="relative">
                     <input type="email" id="email" name="email" class="py-3 px-4 block w-full border
                      border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500
@@ -66,7 +66,7 @@
                 <!-- Form Group -->
                 <div>
                   <div class="flex justify-between items-center">
-                    <label for="password" class="block text-sm mb-2 dark:text-white">Password</label>
+                    <label for="password" class="block text-sm mb-2 dark:text-white">Contraseña</label>
 
                   </div>
                   <div class="relative">
@@ -91,7 +91,7 @@
                 <!-- End Form Group -->
 
 
-                <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Sign up</button>
+                <button type="submit" class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">Inscribirse</button>
               </div>
             </form>
             <!-- End Form -->
